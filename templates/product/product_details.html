@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+    </style>
+    <h2>Product Table</h2>
+    <table>
+        
+        <tr>
+        <th>user_id</th>
+        <th>product_name</th>
+        <th>quantity</th>
+        <th>price</th>
+        <th>Add</th>
+        <th>Update</th>
+        </tr>
+        
+        {% for i in Form_data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.product_name}}</td>
+            <td>{{i.quantity}}</td>
+            <td>{{i.price}}</td>
+            <td><a href="./product_form/"><button>Add</button></a></td>
+            <td><a href="./product_update/{{i.id}}"><button>Update</button></a></td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+
